@@ -1,4 +1,4 @@
-package __PACKAGE_NAME__;
+package com.limainfo.vv.wxapi;
 
 import android.app.Activity;
 import android.content.Intent;
