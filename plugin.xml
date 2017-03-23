@@ -130,6 +130,9 @@
 
         <source-file src="src/android/Wechat.java" target-dir="src/xu/li/cordova/wechat" />
         <source-file src="src/android/Util.java" target-dir="src/xu/li/cordova/wechat" />
+        <source-file src="src/android/EntryActivity.java" target-dir="src/com/limainfo/vv/wxapi" />
+        <source-file src="src/android/WXEntryActivity.java" target-dir="src/com/limainfo/vv/wxapi" />
+        <source-file src="src/android/WXPayEntryActivity.java" target-dir="src/com/limainfo/vv/wxapi" />
         <source-file src="src/android/libammsdk.jar" target-dir="libs" />
     </platform>
 </plugin>
