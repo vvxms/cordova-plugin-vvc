@@ -35,7 +35,7 @@
             <preference name="WECHATAPPID" value="$WECHATAPPID"/>
         </config-file>
 
-        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+ <!--        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
             <array>
                 <string>weixin</string>
                 <string>wechat</string>
@@ -47,7 +47,7 @@
                 <key>NSAllowsArbitraryLoads</key>
                 <true/>
             </dict>
-        </config-file>
+        </config-file> -->
         
 
        <!--  <config-file target="*-Info.plist" parent="CFBundleURLTypes">
