@@ -156,4 +156,14 @@ public class Wechat extends CordovaPlugin {
 
         return true;
     } 
+  
+   private void sendNoResultPluginResult(CallbackContext callbackContext) {
+        // save current callback context
+        currentCallbackContext = callbackContext;
+
+        // send no result and keep callback
+        PluginResult result = new PluginResult(PluginResult.Status.NO_RESULT);
+        result.setKeepCallback(true);
+        callbackContext.sendPluginResult(result);
+    }
 }
