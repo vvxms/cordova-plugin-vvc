@@ -14,7 +14,8 @@ import com.tencent.mm.sdk.modelmsg.SendAuth;
 
 public class Wechat extends CordovaPlugin { 
  
-
+     public static Wechat instance = null;
+ 
     @Override
     protected void pluginInitialize() {
 
