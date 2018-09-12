@@ -37,6 +37,12 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
 
        
     }
+    
+     @Override
+    public void onReq(BaseReq req) {
+        finish();
+    }
+
 
     @Override
     public void onResp(BaseResp resp) { 
