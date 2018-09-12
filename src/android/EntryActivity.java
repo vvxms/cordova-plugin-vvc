@@ -27,8 +27,7 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
 
         if (Wechat.instance.getWxAPI() == null) {
             startMainActivity();
-        } else {
-            Wechat.instance.getWxAPI().handleIntent(getIntent(), this);
+        } else { 
         }
     }
 
@@ -36,13 +35,7 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
-        setIntent(intent);
-
-        if (Wechat.instance.getWxAPI() == null) {
-            startMainActivity();
-        } else {
-            Wechat.instance.getWxAPI().handleIntent(intent, this);
-        }
+       
     }
 
     @Override
@@ -53,47 +46,10 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
             startMainActivity();
             return ;
         }
-
-        switch (resp.errCode) {
-            case BaseResp.ErrCode.ERR_OK:
-                switch (resp.getType()) {
-                    case ConstantsAPI.COMMAND_SENDAUTH:
-                        auth(resp);
-                        break;
-
-                    case ConstantsAPI.COMMAND_PAY_BY_WX:
-                    default:
-                        Wechat.instance.getCurrentCallbackContext().success();
-                        break;
-                }
-                break;
-            case BaseResp.ErrCode.ERR_USER_CANCEL:
-                Wechat.instance.getCurrentCallbackContext().error(Wechat.ERROR_WECHAT_RESPONSE_USER_CANCEL);
-                break;
-            case BaseResp.ErrCode.ERR_AUTH_DENIED:
-                Wechat.instance.getCurrentCallbackContext().error(Wechat.ERROR_WECHAT_RESPONSE_AUTH_DENIED);
-                break;
-            case BaseResp.ErrCode.ERR_SENT_FAILED:
-                Wechat.instance.getCurrentCallbackContext().error(Wechat.ERROR_WECHAT_RESPONSE_SENT_FAILED);
-                break;
-            case BaseResp.ErrCode.ERR_UNSUPPORT:
-                Wechat.instance.getCurrentCallbackContext().error(Wechat.ERROR_WECHAT_RESPONSE_UNSUPPORT);
-                break;
-            case BaseResp.ErrCode.ERR_COMM:
-                Wechat.instance.getCurrentCallbackContext().error(Wechat.ERROR_WECHAT_RESPONSE_COMMON);
-                break;
-            default:
-                Wechat.instance.getCurrentCallbackContext().error(Wechat.ERROR_WECHAT_RESPONSE_UNKNOWN);
-                break;
-        }
+ 
 
         finish();
-    }
-
-    @Override
-    public void onReq(BaseReq req) {
-        finish();
-    }
+    } 
 
     protected void startMainActivity() {
         Intent intent = new Intent();
