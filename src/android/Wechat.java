@@ -25,8 +25,7 @@ public class Wechat extends CordovaPlugin {
    
 
     @Override
-    public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException {
-        Log.d(TAG, String.format("%s is called. Callback ID: %s.", action, callbackContext.getCallbackId()));
+    public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException { 
  
         if (action.equals("sendAuthRequest")) {
             return true;
