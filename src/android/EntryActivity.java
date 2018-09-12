@@ -59,20 +59,9 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
     }
 
     protected void auth(BaseResp resp) {
-        SendAuth.Resp res = ((SendAuth.Resp) resp);
+        SendAuth.Resp res = ((SendAuth.Resp) resp); 
 
-        Log.d(Wechat.TAG, res.toString());
-
-        JSONObject response = new JSONObject();
-        try {
-            response.put("code", res.code);
-            response.put("state", res.state);
-            response.put("country", res.country);
-            response.put("lang", res.lang);
-        } catch (JSONException e) {
-            Log.e(Wechat.TAG, e.getMessage());
-        }
-
+         
         Wechat.instance.getCurrentCallbackContext().success(response);
     }
 }
