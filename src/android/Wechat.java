@@ -112,6 +112,10 @@ public class Wechat extends CordovaPlugin {
     public IWXAPI getWxAPI() {
         return wxAPI;
     }  
+  
+   public IWXAPI func1() {
+        return wxAPI;
+    }  
 
     public CallbackContext getCurrentCallbackContext() {
         return currentCallbackContext;
@@ -129,7 +133,7 @@ public class Wechat extends CordovaPlugin {
     } 
 
     protected boolean sendAuthRequest(CordovaArgs args, CallbackContext callbackContext) {
-        final IWXAPI api = getWXAPI();
+        final IWXAPI api = func1();
 
         final SendAuth.Req req = new SendAuth.Req();
         try {
