@@ -69,6 +69,9 @@ public class Wechat extends CordovaPlugin {
 
     public static final int MAX_THUMBNAIL_SIZE = 320;
 
+    protected CallbackContext currentCallbackContext;
+    protected IWXAPI wxAPI;
+    protected String appId;
     public static Wechat instance = null;
  
 
