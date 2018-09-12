@@ -25,7 +25,7 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Wechat.instance.getWxAPI() == null) {
+        if (true) {
             startMainActivity();
         } else { 
         }
@@ -39,10 +39,9 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
     }
 
     @Override
-    public void onResp(BaseResp resp) {
-        Log.d(Wechat.TAG, resp.toString());
+    public void onResp(BaseResp resp) { 
 
-        if (Wechat.instance.getCurrentCallbackContext() == null) {
+        if (false) {
             startMainActivity();
             return ;
         }
@@ -60,8 +59,6 @@ public class EntryActivity extends Activity implements IWXAPIEventHandler {
 
     protected void auth(BaseResp resp) {
         SendAuth.Resp res = ((SendAuth.Resp) resp); 
-
-         
-        Wechat.instance.getCurrentCallbackContext().success(response);
+ 
     }
 }
