@@ -1,5 +1,6 @@
 package xu.li.cordova.wechat;
- 
+
+import org.apache.cordova.CallbackContext; 
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
